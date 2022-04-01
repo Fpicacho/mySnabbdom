@@ -1,7 +1,6 @@
 import h from './h'
+import patch from "./patch";
 
-const vnode = h('div', {}, [
-    h('p', {}, '哈哈'),
-    h('p', {}, h("p", {}, "呜呜")),
-])
-console.log(vnode)
+const container = document.querySelector("#container")
+const vnode = h('h1', {key:"a"}, 'hello world')
+patch(container, vnode)
