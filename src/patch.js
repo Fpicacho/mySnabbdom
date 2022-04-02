@@ -13,6 +13,7 @@ export default function (oldVnode, newVnode) {
         console.log(oldVnode, newVnode)
     } else {
         console.log("暴力更新")
-        createElement(newVnode, oldVnode.elm)
+        let newVnodeElm = createElement(newVnode)
+        // oldVnode.elm.parentNode.insertBefore(newVnodeElm, oldVnode.elm)
     }
 };
