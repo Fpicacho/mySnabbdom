@@ -7,9 +7,9 @@ export default function (sel, data, c) {
     }
     /*
     重载参数c 判断以下三种情况做出不同的反应
-    h('p',{},'嘿嘿～')
-    h('p',{},[h('p',{},'嘿嘿～'),h('p',{},'嘿嘿～')])
-    h('p',{},h('p',{},'嘿嘿～'))
+        h('p',{},'嘿嘿～')
+        h('p',{},[h('p',{},'嘿嘿～'),h('p',{},'嘿嘿～')])
+        h('p',{},h('p',{},'嘿嘿～'))
      */
     if (typeof c === "string" || typeof c === "number") {
         return vnode(sel, data, undefined, c, undefined)
