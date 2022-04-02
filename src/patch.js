@@ -14,6 +14,10 @@ export default function (oldVnode, newVnode) {
     } else {
         console.log("暴力更新")
         let newVnodeElm = createElement(newVnode)
-        // oldVnode.elm.parentNode.insertBefore(newVnodeElm, oldVnode.elm)
+        if (oldVnode.elm.parentNode && newVnodeElm) {
+            oldVnode.elm.parentNode.insertBefore(newVnodeElm, oldVnode.elm)
+        }
+        // 删除老节点
+        oldVnode.elm.parentNode.removeChild(oldVnode.elm)
     }
 };
